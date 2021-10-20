@@ -1,7 +1,5 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, ImageBackground, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Data from '../../Constantes/dataBateaux.json';
 import BateauDesc from './BateauDesc';
 
@@ -27,7 +25,7 @@ export default class BateauHome extends React.Component{
             key={index}
             onPress = {()=>{
               this.props.navigation.navigate('BateauDesc', {id:value.id});
-            }}>{value.name} 
+            }}>{value.name}
             <Image source={require('../../App_Resources/iOS/'+value.imageUrl)}
           style={styles.photo}/>
           </Button>
@@ -68,4 +66,3 @@ const styles = StyleSheet.create({
 
 },
 })
-

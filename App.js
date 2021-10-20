@@ -9,6 +9,7 @@ import Recettes from "./Screens/Recettes";
 import RecetteDetails from "./Screens/RecetteDetails";
 import profilGerant from "./Screens/profilGerant";
 import AccueilScreen from "./Screens/AccueilScreen";
+import BateauScreen from "./Screens/BateauScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -18,10 +19,7 @@ export default function App() {
     //   <StatusBar style="auto" />
     // </View>
     <NavigationContainer>
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false
-      }}>
+      <Stack.Navigator>
         <Stack.Screen
           name = "Acceuil"
           component = {AccueilScreen}
@@ -37,6 +35,10 @@ export default function App() {
         <Stack.Screen
           name = "Details de la recette"
           component = {RecetteDetails}
+        />
+        <Stack.Screen
+          name = "Bateau"
+          component = {BateauScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

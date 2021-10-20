@@ -34,7 +34,7 @@ export default class AccueilUpdate extends React.Component {
 
                     <TouchableOpacity style={stylesBtn.combImgText}
                     onPress = {()=>{
-                      //this.props.navigation.navigate('Profil du gerant');
+                      this.props.navigation.navigate('Bateau');
                     }}>
                         <Image style={stylesBtn.image}
                         source={require('../../App_Resources/iOS/ancre.png')} />
