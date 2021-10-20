@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"imageUrl": "require('../../App_Resources/iOS/deLaBrise_icon.png')",
+		"name": "De la Brise"
+	},
+	{
+		"id": 2,
+		"imageUrl": "require('../../App_Resources/iOS/saphir_icon.png')",
+		"name": "Saphir"
+	},
+	{
+		"id": 3,
+		"imageUrl": "require('../../App_Resources/iOS/gastMicher_icon.png')",
+		"name": "Gast Micher"
+	},
+	{
+		"id": 4,
+		"imageUrl": "require('../../App_Resources/iOS/aquilon_icon.png')",
+		"name": "Aquilon"
+	}
+
+]
