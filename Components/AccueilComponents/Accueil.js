@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet,Image, Text, View } from 'react-native'
+import { ImageBackground,StyleSheet,Image, Text, View } from 'react-native'
 import Bateau from './Bateau'
 import Contact from './Contact'
 import Produit from './Produit'
@@ -9,20 +9,23 @@ import Restaurant from './Restaurant'
 const Accueil = () => {
     return (
         
-            <View>
-                {/*<Image style={styles.background} 
-                source={require('../../App_Resources/iOS/background.png')} />*/}
+            <View style={styles.page}>
+                <ImageBackground 
+                source={require('../../App_Resources/iOS/background.png')} 
+                style={styles.background} >
                 <Produit/>
                 <View>
                     <View style={styles.combTouch}>
                         <Bateau style={styles.styleTouch}/>
-                        <Restaurant style={styles.styleTouch2}/>
+                        <Restaurant style={styles.styleTouch}/>
                     </View>
-                    <View>
+                    {/*<Bateau style={styles.styleTouch}/>*/}
+                    <View style={styles.combTouch}>
                         <Recette/>
                         <Contact/>
                     </View>
                 </View>
+                </ImageBackground>
             </View>
         
     )
@@ -31,29 +34,23 @@ const Accueil = () => {
 export default Accueil
 
 const styles=StyleSheet.create({
+   
     background:{
-        width:300,
-        height:300
+        flex:1
     },
     blockTouch:{
         
     },
     combTouch:{
-        width: "100%",
         flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
-        
-        /*paddingLeft:"2%",
-        paddingRight:"2%"*/
+        /*marginBottom:10,*/
+        paddingHorizontal:"2%"
     },
+    
     styleTouch:{
-        flex:1,
-        /*paddingLeft:"2%",
-        paddingRight:"2%"*/
-    },
-    styleTouch1:{
-        flex:1
+        flex:.1
     }
 
 })

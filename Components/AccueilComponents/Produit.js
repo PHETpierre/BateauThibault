@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
      height: "100%",*/
      textAlign:'center',
      paddingTop: 10,
-     fontSize:20
+     fontSize:15
      /*backgroundColor:"red"*/
   },
   image:{
