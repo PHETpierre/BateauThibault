@@ -32,6 +32,13 @@ export default class BateauHome extends React.Component{
           style={styles.photo}/>
           </Button>
         })}
+
+        <Button title="Contact">
+          <Image source={require('../../App_Resources/iOS/ancre.png')}/>
+        </Button>
+        <Button title="Contact">
+          <Image source={require('../../App_Resources/iOS/ancre.png')}/>
+        </Button>
         </ImageBackground>
     )
   }
