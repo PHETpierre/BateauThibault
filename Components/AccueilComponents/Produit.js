@@ -19,7 +19,7 @@ const Produit = () => {
       </TouchableOpacity>
     </View>
 
-    {/* It will be use in 
+    {/* It will be use in
     <Image source={require('../../App_Resources/iOS/background.png')}
      style={styles.imageBack}/>*/}
     </View>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     zIndex:2*/
   },
   text:{
-     /*width: "100%", 
+     /*width: "100%",
      height: "100%",*/
      textAlign:'center',
      paddingTop: 10,
@@ -70,4 +70,3 @@ const styles = StyleSheet.create({
     borderColor:'50%',
   },
 })
-
