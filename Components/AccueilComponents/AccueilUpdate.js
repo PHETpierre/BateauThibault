@@ -1,6 +1,6 @@
 import React  from 'react'
 import { TouchableOpacity,Image,StyleSheet, Text, View } from 'react-native'
-import { stylesBtn } from './Style'
+//import { stylesBtn } from './Style'
 export default class AccueilUpdate extends React.Component {
     render() {
         return (
@@ -22,7 +22,7 @@ export default class AccueilUpdate extends React.Component {
                 </View>
 
                 {/* Second block Touchable */}
-                <View style={stylesBtn.block}>
+                {/*<View style={stylesBtn.block}>
       
                     <TouchableOpacity style={stylesBtn.combImgText}>
                         <Image style={stylesBtn.image} 
@@ -35,10 +35,10 @@ export default class AccueilUpdate extends React.Component {
                         source={require('../../App_Resources/iOS/restaurant.png')} />
                         <Text style={stylesBtn.text}> Restaurant</Text>
                     </TouchableOpacity>
-                </View>
+        </View>*/}
 
                 {/* last block Touchable */}
-                <View style={stylesBtn.block}>
+                {/*<View style={stylesBtn.block}>
       
             
                     <TouchableOpacity style={stylesBtn.combImgText}>
@@ -53,7 +53,7 @@ export default class AccueilUpdate extends React.Component {
                         <Text style={stylesBtn.text}> Contact</Text>
                     </TouchableOpacity>
 
-                </View>
+    </View>*/}
 
 
             </View>
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
     /*width: 100,*/
     height: 150,
     textAlign: 'center',
-    backgroundColor:'gray',
-    opacity: 0.5,
+    /*backgroundColor:'gray',
+    opacity: 0.5,*/
     alignSelf:'center'
   },
   combImgText:{
