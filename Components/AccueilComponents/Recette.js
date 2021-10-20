@@ -1,25 +1,33 @@
 import React from 'react'
 import { StyleSheet,TouchableOpacity,Image,Text, View } from 'react-native'
 //import { ContextAccueil} from './ContextAccueil'
-const Recette = () => {
-    //const styles=useContext(ContextAccueil)
+class Recette extends React.Component {
+  //const styles=useContext(ContextAccueil)
+  constructor(props){
+    super(props)
+  }
+  render(){
     return (
-        <View /*style={styles.padd}*/>
-        <View style={styles.block}>
-      {/* Add the text inside to describe his entreprise */}
-            
-            <TouchableOpacity style={styles.combImgText}>
-                <Image style={styles.image} 
-                source={require('../../App_Resources/iOS/recette.png')} />
-                <Text style={styles.text}> Recettes</Text>
-            </TouchableOpacity>
-        </View>
+          <View /*style={styles.padd}*/>
+          <View style={styles.block}>
+        {/* Add the text inside to describe his entreprise */}
 
-    {/* It will be use in 
-    <Image source={require('../../App_Resources/iOS/background.png')}
-     style={styles.imageBack}/>*/}
-    </View>
-    )
+              <TouchableOpacity style={styles.combImgText}
+              onPress = {()=>{
+                this.props.navigation.navigate('Recettes');
+              }}>
+                  <Image style={styles.image}
+                  source={require('../../App_Resources/iOS/recette.png')} />
+                  <Text style={styles.text}> Recettes</Text>
+              </TouchableOpacity>
+          </View>
+
+      {/* It will be use in
+      <Image source={require('../../App_Resources/iOS/background.png')}
+       style={styles.imageBack}/>*/}
+      </View>
+    );
+  }
 }
 
 export default Recette
@@ -41,7 +49,7 @@ const styles = StyleSheet.create({
     zIndex:2*/
   },
   text:{
-     /*width: "100%", 
+     /*width: "100%",
      height: "100%",*/
      textAlign:'center',
      paddingTop: 10,

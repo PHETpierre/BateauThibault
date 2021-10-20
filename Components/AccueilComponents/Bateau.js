@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet,TouchableOpacity,Image,Text, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, Image, Text, View } from 'react-native'
 //import { ContextAccueil} from './ContextAccueil'
 const Bateau = () => {
     //const styles=useContext(ContextAccueil)
@@ -7,15 +7,15 @@ const Bateau = () => {
         <View /*style={styles.padd}*/>
         <View style={styles.block}>
       {/* Add the text inside to describe his entreprise */}
-            
+
             <TouchableOpacity style={styles.combImgText}>
-                <Image style={styles.image} 
+                <Image style={styles.image}
                 source={require('../../App_Resources/iOS/ancre.png')} />
                 <Text style={styles.text}> Bateaux</Text>
             </TouchableOpacity>
         </View>
 
-    {/* It will be use in 
+    {/* It will be use in
     <Image source={require('../../App_Resources/iOS/background.png')}
      style={styles.imageBack}/>*/}
     </View>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     justifyContent : 'flex-start',
     /*padding: "2%",*/
-    
+
   },
   combImgText:{
     /*width:70,
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     zIndex:2*/
   },
   text:{
-     /*width: "100%", 
+     /*width: "100%",
      height: "100%",*/
      textAlign:'center',
      paddingTop: 20,

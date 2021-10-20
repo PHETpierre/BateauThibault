@@ -8,9 +8,11 @@ import Produit from './Components/AccueilComponents/Produit';
 import Recettes from "./Screens/Recettes";
 import RecetteDetails from "./Screens/RecetteDetails";
 import profilGerant from "./Screens/profilGerant";
+import AccueilScreen from "./Screens/AccueilScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
+
   return (
     // <View className="accueil">
     //   <Produit/>
@@ -19,12 +21,16 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name = "Profil du gerant"
-          component = {profilGerant}
+          name = "Acceuil"
+          component = {AccueilScreen}
         />
         <Stack.Screen
           name = "Recettes"
           component = {Recettes}
+        />
+        <Stack.Screen
+          name = "Profil du gerant"
+          component = {profilGerant}
         />
         <Stack.Screen
           name = "Details de la recette"

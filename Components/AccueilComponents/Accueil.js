@@ -6,11 +6,15 @@ import Produit from './Produit'
 import Recette from './Recette'
 import Restaurant from './Restaurant'
 //import { ContextAccueil } from './ContextAccueil'
-const Accueil = () => {
-    return (
-        
+class Accueil extends React.Component {
+    constructor(props){
+      super(props)
+    }
+
+    render(){
+      return (
             <View>
-                {/*<Image style={styles.background} 
+                {/*<Image style={styles.background}
                 source={require('../../App_Resources/iOS/background.png')} />*/}
                 <Produit/>
                 <View>
@@ -19,13 +23,13 @@ const Accueil = () => {
                         <Restaurant style={styles.styleTouch2}/>
                     </View>
                     <View>
-                        <Recette/>
+                        <Recette navigation={this.props.navigation}/>
                         <Contact/>
                     </View>
                 </View>
             </View>
-        
-    )
+      );
+    }
 }
 
 export default Accueil
@@ -36,14 +40,14 @@ const styles=StyleSheet.create({
         height:300
     },
     blockTouch:{
-        
+
     },
     combTouch:{
         width: "100%",
         flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
-        
+
         /*paddingLeft:"2%",
         paddingRight:"2%"*/
     },
@@ -57,5 +61,3 @@ const styles=StyleSheet.create({
     }
 
 })
-
-

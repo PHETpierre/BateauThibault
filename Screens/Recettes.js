@@ -25,7 +25,7 @@ export default class Recettes extends React.Component {
           title={value.name}
           key={index}
           onPress = {()=>{
-            this.props.navigation.navigate('RecetteDetails', {recette:value});
+            this.props.navigation.navigate('Details de la recette', {recette:value});
           }}>{value.name}</Button>
         })}
       </View>
