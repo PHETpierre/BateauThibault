@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import './Constantes/accueil.css'
 import Produit from './Components/AccueilComponents/Produit';
@@ -18,7 +18,10 @@ export default function App() {
     //   <StatusBar style="auto" />
     // </View>
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen
           name = "Acceuil"
           component = {AccueilScreen}

@@ -1,15 +1,16 @@
 import React  from 'react'
 import { ImageBackground, TouchableOpacity,Image,StyleSheet, Text, View } from 'react-native'
 import { stylesBtn } from './Style'
+import { globalStyle } from '../../styles'
 
 export default class AccueilUpdate extends React.Component {
     render() {
         return (
-            <View>
+            <View style={globalStyle.container}>
+              <ImageBackground
+              source={require('../../App_Resources/iOS/background.png')}
+              style={styles.background} >
                 {/* first block */}
-                <ImageBackground
-                source={require('../../App_Resources/iOS/background.png')}
-                style={styles.background} >
                 <View style={styles.block}>
 
                     <View style={styles.descripText}>
@@ -73,8 +74,7 @@ export default class AccueilUpdate extends React.Component {
                     </TouchableOpacity>
 
                 </View>
-
-                </ImageBackground>
+              </ImageBackground>
             </View>
         )
     }
@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     borderColor:'50%',
   },
   background:{
-      flex:1
+      flex:1,
+      resizeMode: 'cover',
   }
 })
