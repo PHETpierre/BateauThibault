@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Title } from 'react-native-paper';
+import { color } from '../styles';
 
 export default class profilGerant extends React.Component {
   constructor(props){
