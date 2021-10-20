@@ -1,54 +1,42 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { Image, StyleSheet, Text, View, ImageBackground, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Data from '../../Constantes/dataBateaux.json';
 import BateauDesc from './BateauDesc';
 
-const BateauHome = ({ navigation }) => {
-  return (
-      <ImageBackground source={require('../../App_Resources/iOS/background.png')} style={{ width: "100%", height: "100%" }} resizeMode="cover" >
-        <Text>Nos bateaux partenaires</Text>
+var bateauxList = Data;
 
-      <Text> Tous les eaux mènent à Thibault.</Text>
-      <Text>     06.63.99.99.78 </Text>
-      <Text>   lebateaudethibault@gmail.com</Text>
-      <Text>www.facebook.com/lebateaudethibault</Text>
+export default class BateauHome extends React.Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return (
+        <ImageBackground source={require('../../App_Resources/iOS/background.png')} style={{ width: "100%", height: "100%" }} resizeMode="cover" >
+          <Text>Nos bateaux partenaires</Text>
 
-      <button> deLaBrise
-        <Image source={require('../../App_Resources/iOS/deLaBrise_icon.png')}
-        style={styles.photo}
-        onPress={() => navigation.navigate('desc')}/>
-      </button>
-      <button> saphir
-        <Image source={require('../../App_Resources/iOS/saphir_icon.png')}
-        style={styles.photo}
-        onPress={() => navigation.navigate('desc')}/>
-      </button>
-      <button> Gast Micher
-        <Image source={require('../../App_Resources/iOS/gastMicher_icon.png')}
-        style={styles.photo}
-        onPress={() => navigation.navigate('desc')}/>
-      </button>
-      <button> Aquilon
-        <Image source={require('../../App_Resources/iOS/Aquilon_icon.png')}
-        style={styles.photo}
-        onPress={() => navigation.navigate('desc')}/>
-      </button>
+        <Text> Tous les eaux mènent à Thibault.</Text>
+        <Text>     06.63.99.99.78 </Text>
+        <Text>   lebateaudethibault@gmail.com</Text>
+        <Text>www.facebook.com/lebateaudethibault</Text>
 
-      <button> Contact
-        <Image source={require('../../App_Resources/iOS/ancre.png')}
-        style={styles.photo}/>
-      </button>
-      <button> Contact
-        <Image source={require('../../App_Resources/iOS/ancre.png')}
-        style={styles.photo}/>
-      </button>
-      </ImageBackground>
-      
-  )
+        {bateauxList.map((value, index)=>{
+          return <Button
+            title={value.name}
+            key={index}
+            onPress = {()=>{
+              this.props.navigation.navigate('BateauDesc', {id:value.id});
+            }}>{value.name} 
+            <Image source={require('../../App_Resources/iOS/'+value.imageUrl)}
+          style={styles.photo}/>
+          </Button>
+        })}
+        </ImageBackground>
+    )
+  }
 }
 
-export default BateauHome
 
 const styles = StyleSheet.create({
   combine_components:{

@@ -1,23 +1,27 @@
 [
 	{
+		"id": 0,
+		"imageUrl": "deLaBrise@3x.png",
+		"name": "De la Brise",
+		"description": "\n\n\n\tQu'il est chaud le soleil\nQuand nous sommes en vacances\n Y a d'la joie, des hirondelles\n\tC'est le sud de la France\n\t Papa bricole au garage\nMaman lit dans la chaise longue\n\t  Dans ce joli paysage\n Moi, je me balade en tongs\n\n\t   Que de bonheur!\n\t   Que de bonheur!"
+	},
+	{
 		"id": 1,
-		"imageUrl": "require('../../App_Resources/iOS/deLaBrise_icon.png')",
-		"name": "De la Brise"
+		"imageUrl": "saphir@3x.png",
+		"name": "Saphir",
+		"description": "\n\n\n\tQu'il est chaud le soleil\nQuand nous sommes en vacances\n Y a d'la joie, des hirondelles\n\tC'est le sud de la France\n\t Papa bricole au garage\nMaman lit dans la chaise longue\n\t  Dans ce joli paysage\n Moi, je me balade en tongs\n\n\t   Que de bonheur!\n\t   Que de bonheur!"	
 	},
 	{
 		"id": 2,
-		"imageUrl": "require('../../App_Resources/iOS/saphir_icon.png')",
-		"name": "Saphir"
+		"imageUrl": "gastMicher@3x.png",
+		"name": "Gast Micher",
+		"description": "\n\n\n\tQu'il est chaud le soleil\nQuand nous sommes en vacances\n Y a d'la joie, des hirondelles\n\tC'est le sud de la France\n\t Papa bricole au garage\nMaman lit dans la chaise longue\n\t  Dans ce joli paysage\n Moi, je me balade en tongs\n\n\t   Que de bonheur!\n\t   Que de bonheur!"	
 	},
 	{
 		"id": 3,
-		"imageUrl": "require('../../App_Resources/iOS/gastMicher_icon.png')",
-		"name": "Gast Micher"
-	},
-	{
-		"id": 4,
-		"imageUrl": "require('../../App_Resources/iOS/aquilon_icon.png')",
-		"name": "Aquilon"
+		"imageUrl": "aquilon@3x.png",
+		"name": "Aquilon",
+		"description": "\n\n\n\tQu'il est chaud le soleil\nQuand nous sommes en vacances\n Y a d'la joie, des hirondelles\n\tC'est le sud de la France\n\t Papa bricole au garage\nMaman lit dans la chaise longue\n\t  Dans ce joli paysage\n Moi, je me balade en tongs\n\n\t   Que de bonheur!\n\t   Que de bonheur!"
 	}
 
 ]

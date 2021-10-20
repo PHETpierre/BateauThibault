@@ -2,22 +2,18 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, ImageBackground } from 'react-native';
 import Data from '../../Constantes/dataBateaux.json';
 
-
-var btn_id = 0;
-
-var x = Data[btn_id]["name"];
-var y = Data[btn_id]["imageUrl"];
-
-
-
-const BateauDesc = ({ navigation }) => {
+function BateauDesc({props, route}){
+  var id = route.params.id;
+  var x = Data[id]["name"];
+  var y = Data[id]["imageUrl"];
   return (
-      <ImageBackground source={require('../../App_Resources/iOS/background.png')} style={{ width: "100%", height: "100%" }} resizeMode="cover" >
-        <Text>{x}</Text>
-        <Text>XXX YYY ZZZ</Text>
-        <Text>Nos bateaux partenaires</Text>
-        <Image source={y}
+      <ImageBackground source={require('../../App_Resources/iOS/background.png')} style={styles.backgroundImage} resizeMode="cover" >
+        <Text style={{marginLeft: '30%', fontSize: '215%', marginTop: '15%'}}>{x}</Text>
+        <Image source={require('../../App_Resources/iOS/'+y)}
         style={styles.photo}/>
+        <Text style={{marginTop: '5%',
+    marginLeft: '35%', fontSize:'100%'}}>XXX YYY ZZZ</Text>
+        <Text style={{marginLeft: '32.5%', fontSize: '50%'}}>{Data[id]["description"]}</Text>
       </ImageBackground>
   )
 }
@@ -34,14 +30,11 @@ const styles = StyleSheet.create({
     flexDirection:'row'
   },
   photo:{
-    width: '40%',
-    height: '100%',
-    borderColor:'50%'
-  },
-  btn:{
-    width: '60%',
-    height: '100%',
-    borderColor:'50%'
+    width: '70%',
+    height: '40%',
+    borderColor:'50%', 
+    marginTop: '5%',
+    marginLeft: '15%'
   },
   backgroundImage: {
     flex: 1,

@@ -13,14 +13,17 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-  	<NavigationContainer>
-  		<Stack.Navigator>
-  			<Stack.Screen
-  			name = "home"
-  			component={BateauHome}/>
-			<Stack.Screen name="desc" component={BateauDesc}/>
-		</Stack.Navigator>
-	</NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+
+      <Stack.Screen name="BateauHome" component = {BateauHome}/>
+
+      <Stack.Screen
+          name = "BateauDesc"
+          component = {BateauDesc}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
