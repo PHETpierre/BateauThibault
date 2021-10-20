@@ -4,7 +4,6 @@ import {} from './ContextAccueil'
 import { stylesBtn } from './Style'
 const Bateau = (props) => {
     //const styles=useContext(ContextAccueil)
-    console.log(props.styles)
     return (
         <View >
         <View style={stylesBtn.block}>

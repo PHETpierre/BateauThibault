@@ -7,28 +7,26 @@ import Recette from './Recette'
 import Restaurant from './Restaurant'
 //import { ContextAccueil } from './ContextAccueil'
 const Accueil = () => {
-    return (
-
-            <View style={styles.page}>
-                <ImageBackground
-                source={require('../../App_Resources/iOS/background.png')}
-                style={styles.background} >
-                <Produit/>
-                <View>
-                    <View style={styles.combTouch}>
-                        <Bateau style={styles.styleTouch}/>
-                        <Restaurant style={styles.styleTouch}/>
-                    </View>
-                    {/*<Bateau style={styles.styleTouch}/>*/}
-                    <View style={styles.combTouch}>
-                        <Recette/>
-                        <Contact/>
-                    </View>
-                </View>
-                </ImageBackground>
-            </View>
-      );
-    }
+  return (
+      <View style={styles.page}>
+          <ImageBackground
+          source={require('../../App_Resources/iOS/background.png')}
+          style={styles.background} >
+          <Produit/>
+          <View>
+              <View style={styles.combTouch}>
+                  <Bateau style={styles.styleTouch}/>
+                  <Restaurant style={styles.styleTouch}/>
+              </View>
+              {/*<Bateau style={styles.styleTouch}/>*/}
+              <View style={styles.combTouch}>
+                  <Recette/>
+                  <Contact/>
+              </View>
+          </View>
+          </ImageBackground>
+      </View>
+  );
 }
 
 export default Accueil

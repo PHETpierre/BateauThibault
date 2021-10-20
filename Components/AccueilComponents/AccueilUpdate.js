@@ -1,13 +1,17 @@
 import React  from 'react'
-import { TouchableOpacity,Image,StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, TouchableOpacity,Image,StyleSheet, Text, View } from 'react-native'
 import { stylesBtn } from './Style'
+
 export default class AccueilUpdate extends React.Component {
     render() {
         return (
             <View>
                 {/* first block */}
+                <ImageBackground
+                source={require('../../App_Resources/iOS/background.png')}
+                style={styles.background} >
                 <View style={styles.block}>
-                
+
                     <View style={styles.descripText}>
                         <Text>Le Bateau de Thibault</Text>
                         <Text>Vente en direct de notre bateau</Text>
@@ -15,7 +19,10 @@ export default class AccueilUpdate extends React.Component {
                         <Text>Vente en direct de notre bateau</Text>
                     </View>
 
-                    <TouchableOpacity style={styles.combImgText}>
+                    <TouchableOpacity style={styles.combImgText}
+                    onPress = {()=>{
+                      //this.props.navigation.navigate('Profil du gerant');
+                    }}>
                         <Image style={styles.image} source={require('../../App_Resources/iOS/poisson.png')} />
                         <Text style={styles.text}> Produits et promotions</Text>
                     </TouchableOpacity>
@@ -23,15 +30,21 @@ export default class AccueilUpdate extends React.Component {
 
                 {/* Second block Touchable */}
                 <View style={stylesBtn.block}>
-      
-                    <TouchableOpacity style={stylesBtn.combImgText}>
-                        <Image style={stylesBtn.image} 
+
+                    <TouchableOpacity style={stylesBtn.combImgText}
+                    onPress = {()=>{
+                      //this.props.navigation.navigate('Profil du gerant');
+                    }}>
+                        <Image style={stylesBtn.image}
                         source={require('../../App_Resources/iOS/ancre.png')} />
                         <Text style={stylesBtn.text}> Bateau</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={stylesBtn.combImgText}>
-                        <Image style={stylesBtn.image} 
+                    <TouchableOpacity style={stylesBtn.combImgText}
+                    onPress = {()=>{
+                      //this.props.navigation.navigate('Profil du gerant');
+                    }}>
+                        <Image style={stylesBtn.image}
                         source={require('../../App_Resources/iOS/restaurant.png')} />
                         <Text style={stylesBtn.text}> Restaurant</Text>
                     </TouchableOpacity>
@@ -39,23 +52,29 @@ export default class AccueilUpdate extends React.Component {
 
                 {/* last block Touchable */}
                 <View style={stylesBtn.block}>
-      
-            
-                    <TouchableOpacity style={stylesBtn.combImgText}>
-                        <Image style={stylesBtn.image} 
+
+
+                    <TouchableOpacity style={stylesBtn.combImgText}
+                    onPress = {()=>{
+                      this.props.navigation.navigate('Recettes');
+                    }}>
+                        <Image style={stylesBtn.image}
                         source={require('../../App_Resources/iOS/recette.png')} />
                         <Text style={stylesBtn.text}> Recettes</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={stylesBtn.combImgText}>
-                        <Image style={stylesBtn.image} 
+                    <TouchableOpacity style={stylesBtn.combImgText}
+                    onPress = {()=>{
+                      this.props.navigation.navigate('Profil du gerant');
+                    }}>
+                        <Image style={stylesBtn.image}
                         source={require('../../App_Resources/iOS/tourteau.png')} />
                         <Text style={stylesBtn.text}> Contact</Text>
                     </TouchableOpacity>
 
                 </View>
 
-
+                </ImageBackground>
             </View>
         )
     }
@@ -90,7 +109,7 @@ const styles = StyleSheet.create({
     zIndex:2*/
   },
   text:{
-     /*width: "100%", 
+     /*width: "100%",
      height: "100%",*/
      textAlign:'center',
      paddingTop: 10,
@@ -102,5 +121,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderColor:'50%',
   },
+  background:{
+      flex:1
+  }
 })
-

@@ -12,7 +12,6 @@ import AccueilScreen from "./Screens/AccueilScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
-
   return (
     // <View className="accueil">
     //   <Produit/>
