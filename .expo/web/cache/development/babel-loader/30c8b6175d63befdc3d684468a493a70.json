@@ -1,0 +1,1 @@
+{"ast":null,"code":"","map":{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":["//import React from \"react\";\n//import { StyleSheet } from 'react-native';\n\n\n//export const ContextAccueil=React.createContext(styles);"]},"metadata":{},"sourceType":"script"}
