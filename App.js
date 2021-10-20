@@ -7,6 +7,7 @@ import './Constantes/accueil.css'
 import Produit from './Components/AccueilComponents/Produit';
 import Recettes from "./Screens/Recettes";
 import RecetteDetails from "./Screens/RecetteDetails";
+import profilGerant from "./Screens/profilGerant";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -18,11 +19,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name = "Profil du gerant"
+          component = {profilGerant}
+        />
+        <Stack.Screen
           name = "Recettes"
           component = {Recettes}
         />
         <Stack.Screen
-          name = "RecetteDetails"
+          name = "Details de la recette"
           component = {RecetteDetails}
         />
       </Stack.Navigator>

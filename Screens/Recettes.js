@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import RecettesJSON from '../Constantes/Recettes.json';
+
+var recettesList = RecettesJSON;
 
 export default class Recettes extends React.Component {
   constructor(props){
@@ -17,13 +20,14 @@ export default class Recettes extends React.Component {
         <p>addr@hotmail.com</p>
         <p>www.facebookThibault.com</p>
         </Text>
-        <Button title="Homard"
+        {recettesList.map((value, index)=>{
+          return <Button
+          title={value.name}
+          key={index}
           onPress = {()=>{
-            this.props.navigation.navigate('RecetteDetails');
-          }}>Homard</Button>
-        <Button title="St Jacque">St Jacque</Button>
-        <Button title="Bar">Bar</Button>
-        <Button title="Tourteau">Tourteau</Button>
+            this.props.navigation.navigate('RecetteDetails', {recette:value});
+          }}>{value.name}</Button>
+        })}
       </View>
     );
   }

@@ -1,3 +1,8 @@
 [
-  {name: "poisson":, description; "poisson frit", photo: "url"}
+  {"name": "Bar", "titre":"Bar roti au laurier frais", "description": "Sur une plaque ou un plat allant au four, disposer quelques feuilles de laurier frais, verser un fillet d'huile d'olive et du gros sel.", "photo": "url"},
+  {"name": "St Jacques", "titre":"Noix de Saint-Jacques flambees au cogne", "description": "Faire fondre du beurre avec des echalotes", "photo": "url"},
+  {"name": "Homard", "titre":"Homard en chaud-froid", "description": "Faire cuire les homards dans de l'eau bouillante avec du thym, du l'aurier, du sel et du poivre de Cayenne.", "photo": "url"},
+  {"name": "Tourteau", "titre":"Bar roti au laurier frais", "description": "poisson frit", "photo": "url"},
+  {"name": "Recette", "titre":"Poisson et legume", "description": "Faire cuire le poisson et les legumes", "photo": "url"},
+  {"name": "Recette", "titre":"Poisson et legume", "description": "Faire cuire le poisson et les legumes", "photo": "url"}
 ]
