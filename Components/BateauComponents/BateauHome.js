@@ -1,9 +1,11 @@
-import React from 'react'
-import { Image, StyleSheet, Text, View, ImageBackground } from 'react-native'
+import React from 'react';
+import { Image, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BateauDesc from './BateauDesc';
 
-const BateauHome = (props) => {
+const BateauHome = ({ navigation }) => {
   return (
-    <View>
       <ImageBackground source={require('../../App_Resources/iOS/background.png')} style={{ width: "100%", height: "100%" }} resizeMode="cover" >
         <Text>Nos bateaux partenaires</Text>
 
@@ -14,19 +16,23 @@ const BateauHome = (props) => {
 
       <button> deLaBrise
         <Image source={require('../../App_Resources/iOS/deLaBrise_icon.png')}
-        style={styles.photo}/>
+        style={styles.photo}
+        onPress={() => navigation.navigate('desc')}/>
       </button>
       <button> saphir
         <Image source={require('../../App_Resources/iOS/saphir_icon.png')}
-        style={styles.photo}/>
+        style={styles.photo}
+        onPress={() => navigation.navigate('desc')}/>
       </button>
       <button> Gast Micher
         <Image source={require('../../App_Resources/iOS/gastMicher_icon.png')}
-        style={styles.photo}/>
+        style={styles.photo}
+        onPress={() => navigation.navigate('desc')}/>
       </button>
       <button> Aquilon
         <Image source={require('../../App_Resources/iOS/Aquilon_icon.png')}
-        style={styles.photo}/>
+        style={styles.photo}
+        onPress={() => navigation.navigate('desc')}/>
       </button>
 
       <button> Contact
@@ -39,7 +45,6 @@ const BateauHome = (props) => {
       </button>
       </ImageBackground>
       
-    </View>
   )
 }
 

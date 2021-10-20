@@ -5,22 +5,20 @@ import Data from '../../Constantes/dataBateaux.json';
 
 var btn_id = 0;
 
-var x = Data[0]["name"];
-var y = Data[0]["imageUrl"];
+var x = Data[btn_id]["name"];
+var y = Data[btn_id]["imageUrl"];
 
 
 
-const BateauDesc = (props) => {
+const BateauDesc = ({ navigation }) => {
   return (
-    <View>
       <ImageBackground source={require('../../App_Resources/iOS/background.png')} style={{ width: "100%", height: "100%" }} resizeMode="cover" >
         <Text>{x}</Text>
-        <Image source={y} 
-        style={styles.photo}/>
         <Text>XXX YYY ZZZ</Text>
         <Text>Nos bateaux partenaires</Text>
+        <Image source={y}
+        style={styles.photo}/>
       </ImageBackground>
-    </View>
   )
 }
 
