@@ -37,7 +37,7 @@ export default class Recettes extends React.Component {
                     this.props.navigation.navigate('Details de la recette', {recette:value}); }}>
                     <View style={styles.container4}>
                       <Image style={styles.image} source={require('../App_Resources/iOS/poisson.png')} />
-                      <Text style={{alignSelf:'center', paddingLeft:5}}>{value.name}</Text>
+                      <Text style={globalStyle.txtBtn}>{value.name}</Text>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -72,12 +72,10 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: 20,
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(145, 145, 145, 0.5)',
     alignItems: 'start',
-  },
-  buttonHello: {
-    width: 500,
-    backgroundColor: 'red',
+    borderWidth: 1,
+    borderColor: 'rgb(82, 82, 82)',
   },
   image:{
     width:50,

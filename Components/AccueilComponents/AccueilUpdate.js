@@ -6,86 +6,105 @@ import { globalStyle } from '../../styles'
 export default class AccueilUpdate extends React.Component {
     render() {
         return (
-            <View style={globalStyle.container}>
-              <ImageBackground
-              source={require('../../App_Resources/iOS/background.png')}
-              style={styles.background} >
-                {/* first block */}
-                <View style={styles.block}>
+            <ImageBackground
+            source={require('../../App_Resources/iOS/background.png')}
+            style={globalStyle.backgroundImage} >
+              {/* first block */}
+              <View style=''>
+                  <View style={styles.descripText}>
+                      <Text>Le Bateau de Thibault</Text>
+                      <Text>Vente en direct de notre bateau</Text>
+                      <Text>Vente en direct de notre bateaulksd</Text>
+                      <Text>Vente en direct de notre bateau</Text>
+                  </View>
+              </View>
 
-                    <View style={styles.descripText}>
-                        <Text>Le Bateau de Thibault</Text>
-                        <Text>Vente en direct de notre bateau</Text>
-                        <Text>Vente en direct de notre bateaulksd</Text>
-                        <Text>Vente en direct de notre bateau</Text>
+              <View style={styles.container2}>
+                <View style={[globalStyle.w100percent, globalStyle.containerButton]}>
+                  <TouchableOpacity style={globalStyle.button}
+                  onPress = {()=>{
+                    //this.props.navigation.navigate('Profil du gerant');
+                  }}>
+                    <View style={styles.container4}>
+                      <Image style={styles.image} source={require('../../App_Resources/iOS/poisson.png')} />
+                      <Text style={globalStyle.txtBtn}> Produits et promotions</Text>
                     </View>
-
-                    <TouchableOpacity style={styles.combImgText}
-                    onPress = {()=>{
-                      //this.props.navigation.navigate('Profil du gerant');
-                    }}>
-                        <Image style={styles.image} source={require('../../App_Resources/iOS/poisson.png')} />
-                        <Text style={styles.text}> Produits et promotions</Text>
-                    </TouchableOpacity>
+                  </TouchableOpacity>
+                </View>
+                {/* Second block Touchable */}
+                <View style={[globalStyle.w50percent, globalStyle.containerButton]}>
+                  <TouchableOpacity style={globalStyle.button}
+                  onPress = {()=>{
+                    this.props.navigation.navigate('Bateau');
+                  }}>
+                    <View style={styles.container4}>
+                      <Image style={styles.image}
+                      source={require('../../App_Resources/iOS/ancre.png')} />
+                      <Text style={globalStyle.txtBtn}> Bateau</Text>
+                    </View>
+                  </TouchableOpacity>
                 </View>
 
-                {/* Second block Touchable */}
-                <View style={stylesBtn.block}>
-
-                    <TouchableOpacity style={stylesBtn.combImgText}
-                    onPress = {()=>{
-                      this.props.navigation.navigate('Bateau');
-                    }}>
-                        <Image style={stylesBtn.image}
-                        source={require('../../App_Resources/iOS/ancre.png')} />
-                        <Text style={stylesBtn.text}> Bateau</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={stylesBtn.combImgText}
-                    onPress = {()=>{
-                      //this.props.navigation.navigate('Profil du gerant');
-                    }}>
-                        <Image style={stylesBtn.image}
-                        source={require('../../App_Resources/iOS/restaurant.png')} />
-                        <Text style={stylesBtn.text}> Restaurant</Text>
-                    </TouchableOpacity>
+                <View style={[globalStyle.w50percent, globalStyle.containerButton]}>
+                  <TouchableOpacity style={globalStyle.button}
+                  onPress = {()=>{
+                    //this.props.navigation.navigate('Profil du gerant');
+                  }}>
+                    <View style={styles.container4}>
+                      <Image style={styles.image}
+                      source={require('../../App_Resources/iOS/restaurant.png')} />
+                      <Text style={globalStyle.txtBtn}> Restaurant</Text>
+                    </View>
+                  </TouchableOpacity>
                 </View>
 
                 {/* last block Touchable */}
-                <View style={stylesBtn.block}>
-
-
-                    <TouchableOpacity style={stylesBtn.combImgText}
+                <View style={[globalStyle.w50percent, globalStyle.containerButton]}>
+                    <TouchableOpacity style={globalStyle.button}
                     onPress = {()=>{
                       this.props.navigation.navigate('Recettes');
                     }}>
-                        <Image style={stylesBtn.image}
+                      <View style={styles.container4}>
+                        <Image style={styles.image}
                         source={require('../../App_Resources/iOS/recette.png')} />
-                        <Text style={stylesBtn.text}> Recettes</Text>
+                        <Text style={globalStyle.txtBtn}> Recettes</Text>
+                      </View>
                     </TouchableOpacity>
-
-                    <TouchableOpacity style={stylesBtn.combImgText}
+                </View>
+                <View style={[globalStyle.w50percent, globalStyle.containerButton]}>
+                    <TouchableOpacity style={globalStyle.button}
                     onPress = {()=>{
                       this.props.navigation.navigate('Profil du gerant');
                     }}>
-                        <Image style={stylesBtn.image}
+                      <View style={styles.container4}>
+                        <Image style={styles.image}
                         source={require('../../App_Resources/iOS/tourteau.png')} />
-                        <Text style={stylesBtn.text}> Contact</Text>
+                        <Text style={globalStyle.txtBtn}> Contact</Text>
+                      </View>
                     </TouchableOpacity>
-
                 </View>
-              </ImageBackground>
-            </View>
+              </View>
+            </ImageBackground>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    block:{
+  block:{
     flex:1,
     flexDirection:'column',
     justifyContent : 'space-between',
     padding: "2%",
+  },
+  container2: {
+    height: 200,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'start',
+  },
+  container4: {
+    flex: 1,
+    flexDirection: 'row',
   },
   padd:{
     padding: '2%',

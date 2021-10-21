@@ -5,7 +5,7 @@ import Contact from './Contact'
 import Produit from './Produit'
 import Recette from './Recette'
 import Restaurant from './Restaurant'
-//import { ContextAccueil } from './ContextAccueil'
+
 const Accueil = () => {
   return (
       <View style={styles.page}>
