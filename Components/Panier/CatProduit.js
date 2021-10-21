@@ -1,80 +1,102 @@
 import React from 'react'
-import {TouchableOpacity,ImageBackground ,Image, StyleSheet, Text, View } from 'react-native'
+import {TouchableOpacity, ImageBackground ,Image, StyleSheet, Text, View } from 'react-native'
 //import 
 const CatProduit = ({navigation}) => {
     return (
         <View style={styles.entier}>
-            <ImageBackground
-                source={require('../../App_Resources/iOS/background.png')}
-                style={styles.background} >
-
-                {/* Header Application */}
-                <View style={styles.header}>
+            {/* Header Application */}
+            <View style={styles.header}>
+                <View style={styles.headerComp}>
+                    {/* Touchable redirects to Home page */}
                     <TouchableOpacity style={styles.headerLeft}
                     onPress = {()=>{
-                      navigation.navigate('Acceuil');
+                        navigation.navigate('Acceuil');
                     }}>
-                         <Image style={styles.headerImg}
+                        <Image style={styles.headerImg}
                         source={require('../../App_Resources/iOS/HomeLogo.png')} />
                     </TouchableOpacity>
+
+                    {/* logo */}
                     <View style={styles.headerLeft}>
-                         <Image style={styles.headerImg}
+                            <Image style={styles.headerImg}
                         source={require('../../App_Resources/iOS/navbarbg.png')} />
                     </View>
+
+                    {/* Touchable redirects to Price page */}
                     <TouchableOpacity style={styles.headerLeft}
                     onPress = {()=>{
-                      navigation.navigate('Achat des produits');
+                        navigation.navigate('Achat des produits');
                     }}>
-                         <Image style={styles.headerImg}
+                            <Image style={styles.headerImg}
                         source={require('../../App_Resources/iOS/cartLogo.png')} />
                     </TouchableOpacity>
                 </View>
-                
-                <Text >Voici la liste des produits de la semaine</Text>
-                <View style={styles.block}>
+            </View>
 
-                    <TouchableOpacity style={styles.combImgText}
-                    onPress = {()=>{
-                      //navigation.navigate('Recettes');
-                    }}>
-                        <Image style={styles.image}
-                        source={require('../../App_Resources/iOS/poulpe.png')} />
-                        <Text style={styles.text}> Poissons</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.block}>
-
-                    <TouchableOpacity style={styles.combImgText}
-                    onPress = {()=>{
-                      //this.props.navigation.navigate('Profil du gerant');
-                    }}>
-                        <Image style={styles.image}
-                        source={require('../../App_Resources/iOS/poulpe.png')} />
-                        <Text style={styles.text}> Coquillages</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.block}>
-                    <TouchableOpacity style={styles.combImgText}
-                    onPress = {()=>{
-                      //navigation.navigate('Recettes');
-                    }}>
-                        <Image style={styles.image}
-                        source={require('../../App_Resources/iOS/poulpe.png')} />
-                        <Text style={styles.text}> Crustacés</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.block}>
-                    <TouchableOpacity style={styles.combImgText}
-                    onPress = {()=>{
-                      //this.props.navigation.navigate('Profil du gerant');
-                    }}>
-                        <Image style={styles.image}
-                        source={require('../../App_Resources/iOS/poulpe.png')} />
-                        <Text style={styles.text}> Promotions</Text>
-                    </TouchableOpacity>
-                </View>
+            <View style={styles.entierBtn}>
                 
-            </ImageBackground>
+                <ImageBackground
+                    source={require('../../App_Resources/iOS/background.png')}
+                    style={styles.entier} >
+
+                    
+                    
+                    <Text style={styles.descripText}>Voici la liste des produits 
+                    de la semaine</Text>
+                    
+                    {/* Poissons */}
+                    <View style={styles.block}>
+
+                        
+                        <TouchableOpacity style={styles.combImgText}
+                        onPress = {()=>{
+                        navigation.navigate('Produits correspondant Poissons')
+                        }}>
+                            <Image style={styles.image}
+                            source={require('../../App_Resources/iOS/poulpe.png')} />
+                            <Text style={styles.text}> Poissons</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    {/* Coquillage */}
+                    <View style={styles.block}>
+
+                        <TouchableOpacity style={styles.combImgText}
+                        onPress = {()=>{
+                        navigation.navigate('Produits correspondant Coquillages');
+                        }}>
+                            <Image style={styles.image}
+                            source={require('../../App_Resources/iOS/poulpe.png')} />
+                            <Text style={styles.text}> Coquillages</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    {/* Crustacés */}
+                    <View style={styles.block}>
+                        <TouchableOpacity style={styles.combImgText}
+                        onPress = {()=>{
+                        navigation.navigate('Produits correspondant Crustacés');
+                        }}>
+                            <Image style={styles.image}
+                            source={require('../../App_Resources/iOS/poulpe.png')} />
+                            <Text style={styles.text}> Crustacés</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    {/* Promotions */}
+                    <View style={styles.block}>
+                        <TouchableOpacity style={styles.combImgText}
+                        onPress = {()=>{
+                        navigation.navigate('Produits correspondant Promotions');
+                        }}>
+                            <Image style={styles.image}
+                            source={require('../../App_Resources/iOS/poulpe.png')} />
+                            <Text style={styles.text}> Promotions</Text>
+                        </TouchableOpacity>
+                    </View>
+                    
+                </ImageBackground>
+            </View>
         </View>
     )
 }
@@ -83,16 +105,20 @@ export default CatProduit
 
 const styles = StyleSheet.create({
     entier:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'flex-start'
+        flex:1
     },
     header:{
-        flex:0.2,
+        width:"100%",
+        height:30,
+        backgroundColor:'rgba(0,0,0,0.1)',
+        padding:0
+    },
+    headerComp:{
+        flex:1,
+        
         flexDirection:'row',
         justifyContent:'flex-start',
         backgroundColor: 'black',
-        /*opacity: 0.4*/
     },
     headerLeft:{
         flex:1,
@@ -109,11 +135,13 @@ const styles = StyleSheet.create({
         /*backgroundColor:'red',*/
         resizeMode:'contain'
     },
-    headerImg1:{
-        widht:20,
-        height:20,
-        backgroundColor:'green',
-        resizeMode:'contain'
+    descripText:{
+        textAlign:"center"
+    },
+    entierBtn:{
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'flex-start'
     },
     block:{
     flex:1,
@@ -149,8 +177,5 @@ const styles = StyleSheet.create({
     marginLeft:10,
     marginTop:30,
     marginBottom:10
-  },
-  background: {
-    flex:1
   }
 })
