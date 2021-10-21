@@ -30,7 +30,7 @@ export default class AccueilUpdate extends React.Component {
                 </View>
 
                 {/* Second block Touchable */}
-                {/*<View style={stylesBtn.block}>
+                <View style={stylesBtn.block}>
 
                     <TouchableOpacity style={stylesBtn.combImgText}
                     onPress = {()=>{
@@ -49,10 +49,10 @@ export default class AccueilUpdate extends React.Component {
                         source={require('../../App_Resources/iOS/restaurant.png')} />
                         <Text style={stylesBtn.text}> Restaurant</Text>
                     </TouchableOpacity>
-                </View>*/}
+                </View>
 
                 {/* last block Touchable */}
-                {/*<View style={stylesBtn.block}>
+                <View style={stylesBtn.block}>
 
 
                     <TouchableOpacity style={stylesBtn.combImgText}
@@ -73,7 +73,7 @@ export default class AccueilUpdate extends React.Component {
                         <Text style={stylesBtn.text}> Contact</Text>
                     </TouchableOpacity>
 
-                </View>*/}
+                </View>
 
                 </ImageBackground>
             </View>
