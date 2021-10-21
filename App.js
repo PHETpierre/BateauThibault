@@ -17,8 +17,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="BateauHome" component = {BateauHome}/>
+        <Stack.Screen name = "BateauHome" component = {BateauHome}/>
         <Stack.Screen name = "BateauDesc" component = {BateauDesc}/>
+        <Stack.Screen name = "RestaurantHome" component = {RestaurantHome}/>
+        <Stack.Screen name = "RestaurantDesc" component = {RestaurantDesc}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
