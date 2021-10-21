@@ -8,6 +8,8 @@ import './Constantes/accueil.css'
 import Produit from './Components/AccueilComponents/Produit';
 import BateauHome from './Components/BateauComponents/BateauHome';
 import BateauDesc from './Components/BateauComponents/BateauDesc';
+import RestaurantHome from './Components/RestaurantComponents/RestaurantHome';
+import RestaurantDesc from './Components/RestaurantComponents/RestaurantDesc';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,13 +17,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-      <Stack.Screen name="BateauHome" component = {BateauHome}/>
-
-      <Stack.Screen
-          name = "BateauDesc"
-          component = {BateauDesc}
-        />
+        <Stack.Screen name="BateauHome" component = {BateauHome}/>
+        <Stack.Screen name = "BateauDesc" component = {BateauDesc}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
