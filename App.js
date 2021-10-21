@@ -16,16 +16,36 @@ import BateauDesc from './Components/BateauComponents/BateauDesc';
 import RestaurantHome from './Components/RestaurantComponents/RestaurantHome';
 import RestaurantDesc from './Components/RestaurantComponents/RestaurantDesc';
 
+import CatProduit from './Components/Panier/CatProduit';
+import Achat from './Components/Panier/Achat.js';
+import Poissons from './Components/Panier/Poissons';
+import Crustaces from './Components/Panier/Crustaces';
+import Coquillages from './Components/Panier/Coquillages';
+import Promotions from './Components/Panier/Promotions';
+import { AppContext } from './Components/ContextApp/ContextApp';
+import data from './Constantes/Produits.json'
 const Stack = createStackNavigator();
 
 export default function App() {
+  var productItems=[];
+
+
   return (
     // <View className="accueil">
     //   <Produit/>
     //   <StatusBar style="auto" />
     // </View>
+    <AppContext.Provider value={{
+      data,
+      productItems
+    }}>
     <NavigationContainer>
       <Stack.Navigator>
+
+        <Stack.Screen
+          name = "Produits correspondant Poissons"
+          component = {Poissons}
+        />
         <Stack.Screen
           name = "Acceuil"
           component = {AccueilScreen}
@@ -62,8 +82,27 @@ export default function App() {
           name = "RestaurantDesc"
           component = {RestaurantDesc}
         />
+
+        <Stack.Screen
+          name = "Produits correspondant Crustacés"
+          component = {Crustaces}
+        />
+        <Stack.Screen
+          name = "Produits correspondant Coquillages"
+          component = {Coquillages}
+        />
+        <Stack.Screen
+          name = "Produits correspondant Promotions"
+          component = {Promotions}
+        />
+        <Stack.Screen
+          name = "Les produits de la semaine"
+          component = {CatProduit}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
+    </AppContext.Provider>
   );
 }
 const styles = StyleSheet.create({
