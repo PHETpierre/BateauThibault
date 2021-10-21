@@ -2,7 +2,7 @@ import React from 'react'
 import {TouchableOpacity, ImageBackground ,Image, StyleSheet, Text, View } from 'react-native'
 import { useContext } from 'react'
 import { AppContext } from '../ContextApp/ContextApp'
-//import data from '../../Constantes/Produits.json'
+import data from '../../Constantes/Produits.json'
 
 //array Fish
 const arrFish=["Filet Bar de ligne", "Bar de ligne portion", "Aile de raie",
@@ -15,80 +15,97 @@ const filterFish=(jsonElt)=>{
 //console.log(data)
 //console.log(data.filter(filterFish).map(elt=>elt.name))
 
-const Poissons = ({navigation}) => {
-    const {data,list}=useContext(AppContext)
-    //Instance of any click
-    //const [fishElement, fishClik]=useState([]);
-    //console.log(fishElement)
-    const ProductList=data.filter(filterFish).
-            map((elt,ind)=><View style={styles.block} key={ind}>
-                        <TouchableOpacity style={styles.combImgText}
-                        onPress = {()=>{
-                        //navigation.navigate('Acceuil')
-                        //fishClik(fishElement.includes(elt.name)?
-                                   // fishElement:fishElement.push())
-                                   console.log(elt.name)
-                        }}>
-                            <Image style={styles.image}
-                            source={require('../../App_Resources/iOS/poulpe.png')} />
-                            <View style={styles.gatherText}>
-                                <Text style={styles.text}> {elt.name}</Text>
-                                <Text style={styles.text}> {elt.price}€</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>);
+//const {data,list}=useContext(AppContext)
+//Instance of any click
+//const [fishElement, fishClik]=useState([]);
+//console.log(fishElement)
 
-    //<Text key={ind}>{elt.name} ldjfkdj {elt.price}</Text>)
-    return (
-        <View style={styles.entier}>
-            {/* Header Application */}
-            <View style={styles.header}>
-                <View style={styles.headerComp}>
-                    {/* Touchable redirects to Home page */}
-                    <TouchableOpacity style={styles.headerLeft}
-                    onPress = {()=>{
-                        navigation.navigate('Acceuil');
-                    }}>
-                        <Image style={styles.headerImg}
-                        source={require('../../App_Resources/iOS/HomeLogo.png')} />
-                    </TouchableOpacity>
+class Poissons extends React.Component {
 
-                    {/* logo */}
-                    <View style={styles.headerLeft}>
-                            <Image style={styles.headerImg}
-                        source={require('../../App_Resources/iOS/navbarbg.png')} />
-                    </View>
+    constructor(props){
+      super(props)
+      this.state={totalPrice:0}
+    }
 
-                    {/* Touchable redirects to Price page */}
-                    <TouchableOpacity style={styles.headerLeft}
-                    onPress = {()=>{
-                        navigation.navigate('Achat des produits');
-                    }}>
-                            <Image style={styles.headerImg}
-                        source={require('../../App_Resources/iOS/cartLogo.png')} />
-                    </TouchableOpacity>
-                </View>
-            </View>
+    render() {
+      const ProductList=data.filter(filterFish).map(
+        (elt,ind)=><View style={styles.block} key={ind}>
+                          <TouchableOpacity style={styles.combImgText}
+                          onPress = {()=>{
+                            this.context.addProduct(elt);
+                            var countPrice = 0;
+                            for(let product of this.context.productItems){
+                              countPrice+=product.price;
+                            }
+                            this.setState({totalPrice:countPrice});
+                            console.log(this.state.totalPrice);
+                            console.log(countPrice);
+                          //navigation.navigate('Acceuil')
+                          //fishClik(fishElement.includes(elt.name)?
+                                     // fishElement:fishElement.push())
+                                     //console.log(elt.name)
+                          }}>
+                              <Image style={styles.image}
+                              source={require('../../App_Resources/iOS/poulpe.png')} />
+                              <View style={styles.gatherText}>
+                                  <Text style={styles.text}> {elt.name}</Text>
+                                  <Text style={styles.text}> {elt.price}€</Text>
+                              </View>
+                          </TouchableOpacity>
+                      </View>);
+      //<Text key={ind}>{elt.name} ldjfkdj {elt.price}</Text>)
 
-            <View style={styles.entierBtn}>
-                
-                <ImageBackground
-                    source={require('../../App_Resources/iOS/background.png')}
-                    style={styles.entier} >
+      return (
+          <View style={styles.entier}>
+              {/* Header Application */}
+              <View style={styles.header}>
+                  <View style={styles.headerComp}>
+                      {/* Touchable redirects to Home page */}
+                      <TouchableOpacity style={styles.headerLeft}
+                      onPress = {()=>{
+                          this.props.navigation.navigate('Acceuil');
+                      }}>
+                          <Image style={styles.headerImg}
+                          source={require('../../App_Resources/iOS/homeLogo.png')} />
+                      </TouchableOpacity>
 
-                    <Text style={styles.descripText}>Choisissez Vos produit</Text>
-                    
-                    {/* Poissons */}
-                    
-                    {ProductList}
-                    
-                    
-                </ImageBackground>
-            </View>
-        </View>
-    )
+                      {/* logo */}
+                      <View style={styles.headerLeft}>
+                              <Image style={styles.headerImg}
+                          source={require('../../App_Resources/iOS/navbarbg.png')} />
+                      </View>
+
+                      {/* Touchable redirects to Price page */}
+                      <TouchableOpacity style={styles.headerLeft}
+                      onPress = {()=>{
+                          this.props.navigation.navigate('Achat des produits');
+                      }}>
+                              <Image style={styles.headerImg}
+                          source={require('../../App_Resources/iOS/cartLogo.png')} />
+                      </TouchableOpacity>
+                  </View>
+              </View>
+              <View style={styles.entierBtn}>
+
+                  <ImageBackground
+                      source={require('../../App_Resources/iOS/background.png')}
+                      style={styles.entier} >
+
+                      <Text style={styles.descripText}>Choisissez Vos produit</Text>
+
+                      {/* Poissons */}
+
+                      {ProductList}
+
+
+                  </ImageBackground>
+              </View>
+          </View>
+      );
+    }
 }
 
+Poissons.contextType = AppContext;
 export default Poissons
 
 const styles = StyleSheet.create({
@@ -103,7 +120,7 @@ const styles = StyleSheet.create({
     },
     headerComp:{
         flex:1,
-        
+
         flexDirection:'row',
         justifyContent:'flex-start',
         backgroundColor: 'black',
@@ -136,7 +153,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     justifyContent : 'space-between',
     /*padding: "2%",*/
-    
+
   },
   combImgText:{
     /*width:70,
@@ -154,7 +171,7 @@ const styles = StyleSheet.create({
     justifyContent:"space-between"
   },
   text:{
-     /*width: "100%", 
+     /*width: "100%",
      height: "100%",*/
      textAlign:'center',
      /*paddingTop: 1,*/

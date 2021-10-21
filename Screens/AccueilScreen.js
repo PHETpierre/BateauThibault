@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Title } from 'react-native-paper';
-import AccueilUpdate from "../Components/AccueilComponents/AccueilUpdate"
+import AccueilUpdate from "../Components/AccueilComponents/AccueilUpdate";
+import { globalStyle } from '../styles';
 
 export default class AccueilScreen extends React.Component {
   constructor(props){
@@ -11,18 +12,9 @@ export default class AccueilScreen extends React.Component {
 
   render(){
     return (
-      <View style={styles.container}>
+      <View style={globalStyle.container}>
         <AccueilUpdate navigation={this.props.navigation}/>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
