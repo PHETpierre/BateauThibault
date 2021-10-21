@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Button, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import RecettesJSON from '../Constantes/Recettes.json';
 import { globalStyle } from '../styles';
 
@@ -18,25 +18,28 @@ export default class Recettes extends React.Component {
         source={require('../App_Resources/iOS/background.png')}
         style={globalStyle.backgroundImage}
         resizeMode="cover">
-          <View style={globalStyle.w50percent}>
-            <Text>Vos recettes</Text>
-            <Text>
-            <p><strong>Toutes les recettes du bateau de Thibault</strong></p>
-            <p>06.55.66.77.88</p>
-            <p>addr@hotmail.com</p>
-            <p>www.facebookThibault.com</p>
-            </Text>
-          </View>
+          <Text>Vos recettes</Text>
+          <Text>
+          <p><strong>Toutes les recettes du bateau de Thibault</strong></p>
+          <p>06.55.66.77.88</p>
+          <p>addr@hotmail.com</p>
+          <p>www.facebookThibault.com</p>
+          </Text>
           <View style={globalStyle.w50percent, styles.container2} >
             {recettesList.map((value, index)=>{
               return(
                 <View style={[globalStyle.w50percent, styles.containerButton]}>
-                  <Button
+                  <TouchableOpacity
                   title={value.name}
+                  style={[styles.button]}
                   key={index}
                   onPress = {()=>{
-                    this.props.navigation.navigate('Details de la recette', {recette:value});
-                  }}>{value.name}</Button>
+                    this.props.navigation.navigate('Details de la recette', {recette:value}); }}>
+                    <View style={styles.container4}>
+                      <Image style={styles.image} source={require('../App_Resources/iOS/poisson.png')} />
+                      <Text style={{alignSelf:'center', paddingLeft:5}}>{value.name}</Text>
+                    </View>
+                  </TouchableOpacity>
                 </View>
             )
             })}
@@ -59,14 +62,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
   },
+  container4: {
+    flex: 1,
+    flexDirection: 'row',
+  },
   containerButton: {
-    padding: 10,
+    padding: 5,
+    justifyContent: 'left',
   },
   button: {
-    height: '20%',
+    padding: 20,
+    backgroundColor: 'white',
+    alignItems: 'start',
   },
   buttonHello: {
     width: 500,
     backgroundColor: 'red',
+  },
+  image:{
+    width:50,
+    height: 50,
+    borderColor:'50%',
   },
 });
