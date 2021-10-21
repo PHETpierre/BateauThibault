@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     marginTop: '15%',
   },
   backgroundImage: {
-    flex: 1
+    flex: 1,
+    width: "100%",
+    height: "100%"
   },
   title:{
     textAlign: 'center',
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize:'100%'
   },
   description:{
-    marginLeft: '32.5%',
-    fontSize: '50%'
+    textAlign:'center',
+    fontSize: '75%'
   }
 })
