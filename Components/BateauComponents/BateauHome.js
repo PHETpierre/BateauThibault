@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     width: '49%',
     height: '31.5%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    borderColor: 'black',
+    borderColor: 'rgb(0, 0, 0)',
     borderWidth: 1,
   },
   btnText:{
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     marginLeft: '5%',
     textAlign: 'center',
     fontSize:'80%',
-    color: "white",
+    color: "rgb(255, 255, 255)",
  },
  btnFlex:{
  	flex:2,

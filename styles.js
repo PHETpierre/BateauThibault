@@ -24,14 +24,15 @@ const globalStyle = StyleSheet.create({
   },
   button: {
     padding: 20,
-    backgroundColor: 'rgba(145, 145, 145, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
     alignItems: 'start',
     borderWidth: 1,
-    borderColor: 'rgb(82, 82, 82)',
+    borderColor: 'rgb(0, 0, 0)',
   },
   txtBtn: {
     alignSelf:'center',
     paddingLeft:5,
+    color: 'rgb(255, 255, 255)',
   },
   image:{
     width:50,

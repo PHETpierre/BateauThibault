@@ -1,6 +1,6 @@
 import React from 'react'
 import {TouchableOpacity, ImageBackground ,Image, StyleSheet, Text, View } from 'react-native'
-//import 
+//import
 const CatProduit = ({navigation}) => {
     return (
         <View style={styles.entier}>
@@ -13,7 +13,7 @@ const CatProduit = ({navigation}) => {
                         navigation.navigate('Acceuil');
                     }}>
                         <Image style={styles.headerImg}
-                        source={require('../../App_Resources/iOS/HomeLogo.png')} />
+                        source={require('../../App_Resources/iOS/homeLogo.png')} />
                     </TouchableOpacity>
 
                     {/* logo */}
@@ -34,20 +34,20 @@ const CatProduit = ({navigation}) => {
             </View>
 
             <View style={styles.entierBtn}>
-                
+
                 <ImageBackground
                     source={require('../../App_Resources/iOS/background.png')}
                     style={styles.entier} >
 
-                    
-                    
-                    <Text style={styles.descripText}>Voici la liste des produits 
+
+
+                    <Text style={styles.descripText}>Voici la liste des produits
                     de la semaine</Text>
-                    
+
                     {/* Poissons */}
                     <View style={styles.block}>
 
-                        
+
                         <TouchableOpacity style={styles.combImgText}
                         onPress = {()=>{
                         navigation.navigate('Produits correspondant Poissons')
@@ -94,7 +94,7 @@ const CatProduit = ({navigation}) => {
                             <Text style={styles.text}> Promotions</Text>
                         </TouchableOpacity>
                     </View>
-                    
+
                 </ImageBackground>
             </View>
         </View>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     headerComp:{
         flex:1,
-        
+
         flexDirection:'row',
         justifyContent:'flex-start',
         backgroundColor: 'black',
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     justifyContent : 'space-between',
     /*padding: "2%",*/
-    
+
   },
   combImgText:{
     /*width:70,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     zIndex:2*/
   },
   text:{
-     /*width: "100%", 
+     /*width: "100%",
      height: "100%",*/
      textAlign:'center',
      paddingTop: 1,
