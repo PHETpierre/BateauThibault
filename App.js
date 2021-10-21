@@ -10,6 +10,12 @@ import RecetteDetails from "./Screens/RecetteDetails";
 import profilGerant from "./Screens/profilGerant";
 import AccueilScreen from "./Screens/AccueilScreen";
 import BateauScreen from "./Screens/BateauScreen";
+
+import BateauHome from './Components/BateauComponents/BateauHome';
+import BateauDesc from './Components/BateauComponents/BateauDesc';
+import RestaurantHome from './Components/RestaurantComponents/RestaurantHome';
+import RestaurantDesc from './Components/RestaurantComponents/RestaurantDesc';
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -39,6 +45,22 @@ export default function App() {
         <Stack.Screen
           name = "Bateau"
           component = {BateauScreen}
+        />
+        <Stack.Screen
+          name = "BateauHome"
+          component = {BateauHome}
+        />
+        <Stack.Screen
+          name = "BateauDesc"
+          component = {BateauDesc}
+        />
+        <Stack.Screen
+          name = "Restaurant Home"
+          component = {RestaurantHome}
+        />
+        <Stack.Screen
+          name = "RestaurantDesc"
+          component = {RestaurantDesc}
         />
       </Stack.Navigator>
     </NavigationContainer>

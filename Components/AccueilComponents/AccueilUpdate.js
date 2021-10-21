@@ -48,7 +48,7 @@ export default class AccueilUpdate extends React.Component {
                 <View style={[globalStyle.w50percent, globalStyle.containerButton]}>
                   <TouchableOpacity style={globalStyle.button}
                   onPress = {()=>{
-                    //this.props.navigation.navigate('Profil du gerant');
+                    this.props.navigation.navigate('Restaurant Home');
                   }}>
                     <View style={styles.container4}>
                       <Image style={styles.image}

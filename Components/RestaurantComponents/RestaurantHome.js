@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Data from '../../Constantes/dataRestaurants.json';
 import RestaurantDesc from './RestaurantDesc';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -23,7 +22,7 @@ export default class RestaurantHome extends React.Component{
 		    </View>
 		    <View style={styles.btnBlock}>
 		        {restaurantsList.map((value, index)=>{
-		          return <TouchableOpacity 
+		          return <TouchableOpacity
 		          	style={styles.btn}
 		            key={index}
 		            onPress = {()=>{
@@ -108,4 +107,3 @@ const styles = StyleSheet.create({
  	fontFamily: "Didot"
  }
 })
-

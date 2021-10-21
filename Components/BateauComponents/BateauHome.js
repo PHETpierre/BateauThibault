@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Data from '../../Constantes/dataBateaux.json';
 import BateauDesc from './BateauDesc';
 import Icon from 'react-native-vector-icons/FontAwesome';
