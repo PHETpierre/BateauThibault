@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     /*width:70,
     height:60,*/
     flexDirection:'row',
-    backgroundColor: 'gray',
+    backgroundColor: 'rgba(0,0,0,0.4)',
     borderRadius:1,
     flex:0.9
     /*position: 'relative',

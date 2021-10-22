@@ -38,6 +38,7 @@ export default class App extends React.Component {
     let productItems= this.state.productItems;
     productItems.push(selectedProduct);
     this.setState({productItems: productItems});
+    
   }
 
   render(){
@@ -50,7 +51,10 @@ export default class App extends React.Component {
       }}>
       <NavigationContainer>
         <Stack.Navigator>
-
+          <Stack.Screen
+            name = "Produits correspondant Poissons"
+            component = {Poissons}
+          />
           <Stack.Screen
             name = "Acceuil"
             component = {AccueilScreen}
@@ -87,10 +91,7 @@ export default class App extends React.Component {
             name = "RestaurantDesc"
             component = {RestaurantDesc}
           />
-          <Stack.Screen
-            name = "Produits correspondant Poissons"
-            component = {Poissons}
-          />
+          
           <Stack.Screen
             name = "Produits correspondant Crustacés"
             component = {Crustaces}
