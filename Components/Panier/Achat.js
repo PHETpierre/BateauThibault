@@ -48,6 +48,8 @@ class Achat extends React.Component {
                                     console.log("click")
                                 }}><Text>Reduce</Text></TouchableOpacity>
                                 <TouchableOpacity style={styles.eachClick} onPress={()=>{
+                                    this.context.removeItems(elt.name)
+                                    console.log(this.context.productItems)
                                     console.log("click")
                                 }}><Text>Remove</Text></TouchableOpacity>
                               </View>
@@ -92,7 +94,7 @@ class Achat extends React.Component {
                   <ImageBackground
                       source={require('../../App_Resources/iOS/background.png')}
                       style={styles.entier} >
-                    <ScrollView>
+                    <ScrollView style={styles.entier}>
                       <Text style={styles.descripText}>Choisissez Vos produit</Text>
 
                       {/* Poissons */}
@@ -160,10 +162,12 @@ const styles = StyleSheet.create({
   combImgText:{
     /*width:70,
     height:60,*/
+    width:"100%",
+    height: 500,
     flexDirection:'row',
     backgroundColor: 'rgba(0,0,0,0.4)',
     borderRadius:1,
-    flex:0.9
+    flex:1
     /*position: 'relative',
     zIndex:2*/
   },
@@ -183,21 +187,23 @@ const styles = StyleSheet.create({
      /*backgroundColor:"red"*/
   },
   image:{
-    width:20,
-    height: 20,
+    width:60,
+    height: 60,
     marginLeft:10,
     /*marginTop:30,
     marginBottom:10*/
+    resizeMode:'contain',
     alignSelf:'center'
   },
   clickAllBtn:{
-      flex:0.5,
+      flex:0.2,
       flexDirection:'column',
-      justifyContent:'center',
-      fontSize:4,
+      justifyContent:'space-between',
+      fontSize:1,
   },
   eachClick:{
-    flex:1,
+    flex:2,
+    textAlign:'center',
     backgroundColor:"blue"
   }
 

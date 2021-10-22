@@ -90,6 +90,22 @@ export default class App extends React.Component {
     }
     this.setState({productItems: productItems})
   }
+  removeItems(name){
+    var productItems=this.state.productItems;
+    var List=productItems.filter(elt=>elt.name==name)[0];
+    var index=productItems.indexOf(List);
+    if(index==0){
+      productItems.shift()
+    }
+    else if(index==productItems.length-1){
+      productItems.pop()
+    }
+    else{
+      productItems=productItems.slice(0,index).
+                    concat(productItems.slice(index+1))
+    }
+    
+  }
 
   render(){
     return (
@@ -99,7 +115,8 @@ export default class App extends React.Component {
         addProduct: this.addProduct.bind(this),
         data,
         addNumItems:this.addNumItems.bind(this),
-        decreaseNumItems:this.decreaseNumItems.bind(this)
+        decreaseNumItems:this.decreaseNumItems.bind(this),
+        removeItems:this.removeItems.bind(this)
       }}>
       <NavigationContainer>
         <Stack.Navigator>
