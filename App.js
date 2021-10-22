@@ -10,6 +10,7 @@ import RecetteDetails from "./Screens/RecetteDetails";
 import profilGerant from "./Screens/profilGerant";
 import AccueilScreen from "./Screens/AccueilScreen";
 import BateauScreen from "./Screens/BateauScreen";
+import AchatScreen from "./Screens/AchatScreen";
 
 import BateauHome from './Components/BateauComponents/BateauHome';
 import BateauDesc from './Components/BateauComponents/BateauDesc';
@@ -107,7 +108,10 @@ export default class App extends React.Component {
             name = "Les produits de la semaine"
             component = {CatProduit}
           />
-
+          <Stack.Screen
+            name = "Achat des produits"
+            component = {AchatScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       </AppContext.Provider>
