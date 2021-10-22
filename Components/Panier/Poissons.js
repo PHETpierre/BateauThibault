@@ -32,14 +32,16 @@ class Poissons extends React.Component {
         (elt,ind)=><View style={styles.block} key={ind}>
                           <TouchableOpacity style={styles.combImgText}
                           onPress = {()=>{
-                            this.context.addProduct(elt);
-                            var countPrice = 0;
+                            this.context.addProduct(elt.name,elt.price);
+                            console.log(this.context.productItems)
+                            console.log(elt.name,elt.price)
+                            /*var countPrice = 0;
                             for(let product of this.context.productItems){
                               countPrice+=product.price;
                             }
                             this.setState({totalPrice:countPrice});
                             console.log(this.state.totalPrice);
-                            console.log(countPrice);
+                            console.log(countPrice);*/
                           //navigation.navigate('Acceuil')
                           //fishClik(fishElement.includes(elt.name)?
                                      // fishElement:fishElement.push())
@@ -159,7 +161,7 @@ const styles = StyleSheet.create({
     /*width:70,
     height:60,*/
     flexDirection:'row',
-    backgroundColor: 'gray',
+    backgroundColor: 'rgba(0,0,0,0.4)',
     borderRadius:1,
     flex:0.9
     /*position: 'relative',
