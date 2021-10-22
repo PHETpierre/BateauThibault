@@ -36,16 +36,17 @@ export default class BateauHome extends React.Component{
 		          </TouchableOpacity>
 		        })}
 
-		        <TouchableOpacity style={styles.btn}>
-		        	<View style={styles.btnFlex} onPress = {()=>{
-		              this.props.navigation.navigate('RestaurantHome');
-		            }}>
+		        <TouchableOpacity style={styles.btn}
+              onPress = {()=>{
+                this.props.navigation.navigate('Profil du gerant');
+              }}>
+		        	<View style={styles.btnFlex}>
 			          <Image source={require('../../App_Resources/iOS/ancre.png')} style={styles.photo}/>
 			          <Text style={styles.btnText}>Contact</Text>
 			        </View>
 		        </TouchableOpacity>
 		        <TouchableOpacity style={styles.btn} onPress = {()=>{
-		              this.props.navigation.navigate('RestaurantHome');
+		              this.props.navigation.navigate('Profil du gerant');
 		            }}>
 		          	<View style={styles.btnFlex}>
 			          <Image source={require('../../App_Resources/iOS/ancre.png')} style={styles.photo}/>

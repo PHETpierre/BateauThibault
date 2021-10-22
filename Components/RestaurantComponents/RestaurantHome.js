@@ -34,10 +34,11 @@ export default class RestaurantHome extends React.Component{
 		          </TouchableOpacity>
 		        })}
 
-		        <TouchableOpacity style={styles.btn}>
-		        	<View style={styles.btnFlex} onPress = {()=>{
-		              this.props.navigation.navigate('profilGerant');
-		            }}>
+		        <TouchableOpacity style={styles.btn}
+              onPress = {()=>{
+                this.props.navigation.navigate('Profil du gerant');
+              }}>
+		        	<View style={styles.btnFlex} >
 			          <Text style={styles.btnText}>Devenez partenaire!</Text>
 			        </View>
             </TouchableOpacity>

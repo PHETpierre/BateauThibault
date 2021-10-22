@@ -8,7 +8,6 @@ import { globalStyle } from '../styles';
 export default class RecetteDetails extends React.Component {
   render(){
     const recette = this.props.route.params.recette;
-    console.log(recette)
     return (
       <ImageBackground
       source={require('../App_Resources/iOS/background.png')}
