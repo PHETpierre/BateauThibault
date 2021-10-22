@@ -10,20 +10,17 @@ export default class AccueilUpdate extends React.Component {
             source={require('../../App_Resources/iOS/background.png')}
             style={globalStyle.backgroundImage} >
               {/* first block */}
-              <View style=''>
-                  <View style={styles.descripText}>
-                      <Text>Le Bateau de Thibault</Text>
-                      <Text>Vente en direct de notre bateau</Text>
-                      <Text>Vente en direct de notre bateaulksd</Text>
-                      <Text>Vente en direct de notre bateau</Text>
-                  </View>
+              <View>
+                      <Text style={styles.title}>Le Bateau de Thibault</Text>
+                      <Text style={styles.subtitle}>{"\tVente en direct de notre bateau\nProduits selon la saison, Livraisons sur Paris"}</Text>
+                      <Text style={styles.description}>{"\t06.63.99.99.78\n  lebateaudethibault@gmail.com\nwww.facebook.com/lebateaudethibault"}</Text>
               </View>
 
               <View style={styles.container2}>
                 <View style={[globalStyle.w100percent, globalStyle.containerButton]}>
                   <TouchableOpacity style={globalStyle.button}
                   onPress = {()=>{
-                    this.props.navigation.navigate('Les produits de la semaine');
+                    //this.props.navigation.navigate('Profil du gerant');
                   }}>
                     <View style={styles.container4}>
                       <Image style={styles.image} source={require('../../App_Resources/iOS/poisson.png')} />
@@ -112,9 +109,8 @@ const styles = StyleSheet.create({
   },
   descripText:{
     /*width: 100,*/
-    height: 150,
+    height: 400,
     textAlign: 'center',
-    backgroundColor:'gray',
     opacity: 0.5,
     alignSelf:'center'
   },
@@ -143,5 +139,19 @@ const styles = StyleSheet.create({
   background:{
       flex:1,
       resizeMode: 'cover',
+  },
+  title:{
+    marginBottom: '80%',
+    textAlign: 'center',
+    fontSize: '150%',
+    fontFamily: '"Didot',
+    color: 'white'
+  },
+  subtitle:{
+    marginBottom: '0%'
+  },
+  description:{
+    opacity: 0.4,
+    marginLeft: '10%'
   }
 })
