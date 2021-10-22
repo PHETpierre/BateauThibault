@@ -32,8 +32,9 @@ class Poissons extends React.Component {
         (elt,ind)=><View style={styles.block} key={ind}>
                           <TouchableOpacity style={styles.combImgText}
                           onPress = {()=>{
-                            this.context.addProduct(elt);
+                            this.context.addProduct(elt.name,elt.price);
                             console.log(this.context.productItems)
+                            console.log(elt.name,elt.price)
                             /*var countPrice = 0;
                             for(let product of this.context.productItems){
                               countPrice+=product.price;

@@ -2,7 +2,7 @@ import React from 'react'
 import {TouchableOpacity, ImageBackground ,Image, StyleSheet, Text, View } from 'react-native'
 import { useContext } from 'react'
 import { AppContext } from '../ContextApp/ContextApp'
-import data from '../../Constantes/Produits.json'
+//import data from '../../Constantes/Produits.json'
 
 //array Fish
 /*const arrFish=["Filet Bar de ligne", "Bar de ligne portion", "Aile de raie",
@@ -10,7 +10,7 @@ import data from '../../Constantes/Produits.json'
 
 //fitler Json Fish
 const filterElt=(jsonElt)=>{
-    return jsonElt.category==1
+    return jsonElt.category==2
 }
 //console.log(data)
 //console.log(data.filter(filterFish).map(elt=>elt.name))
@@ -28,7 +28,7 @@ class Crustaces extends React.Component {
     }
 
     render() {
-      const ProductList=data.filter(filterElt).map(
+      const ProductList=this.context.data.filter(filterElt).map(
         (elt,ind)=><View style={styles.block} key={ind}>
                           <TouchableOpacity style={styles.combImgText}
                           onPress = {()=>{
