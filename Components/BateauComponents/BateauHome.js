@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Data from '../../Constantes/dataBateaux.json';
 import BateauDesc from './BateauDesc';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -37,16 +36,17 @@ export default class BateauHome extends React.Component{
 		          </TouchableOpacity>
 		        })}
 
-		        <TouchableOpacity style={styles.btn}>
-		        	<View style={styles.btnFlex} onPress = {()=>{
-		              this.props.navigation.navigate('RestaurantHome');
-		            }}>
+		        <TouchableOpacity style={styles.btn}
+              onPress = {()=>{
+                this.props.navigation.navigate('Profil du gerant');
+              }}>
+		        	<View style={styles.btnFlex}>
 			          <Image source={require('../../App_Resources/iOS/ancre.png')} style={styles.photo}/>
 			          <Text style={styles.btnText}>Contact</Text>
 			        </View>
 		        </TouchableOpacity>
 		        <TouchableOpacity style={styles.btn} onPress = {()=>{
-		              this.props.navigation.navigate('RestaurantHome');
+		              this.props.navigation.navigate('Profil du gerant');
 		            }}>
 		          	<View style={styles.btnFlex}>
 			          <Image source={require('../../App_Resources/iOS/ancre.png')} style={styles.photo}/>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     width: '49%',
     height: '31.5%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    borderColor: 'black',
+    borderColor: 'rgb(0, 0, 0)',
     borderWidth: 1,
   },
   btnText:{
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     marginLeft: '5%',
     textAlign: 'center',
     fontSize:'80%',
-    color: "white",
+    color: "rgb(255, 255, 255)",
  },
  btnFlex:{
  	flex:2,

@@ -31,12 +31,12 @@ export default class Recettes extends React.Component {
                 <View style={[globalStyle.w50percent, styles.containerButton]}>
                   <TouchableOpacity
                   title={value.name}
-                  style={[styles.button]}
+                  style={[globalStyle.button]}
                   key={index}
                   onPress = {()=>{
                     this.props.navigation.navigate('Details de la recette', {recette:value}); }}>
                     <View style={styles.container4}>
-                      <Image style={styles.image} source={require('../App_Resources/iOS/poisson.png')} />
+                      <Image style={styles.image} source={require('../App_Resources/iOS/'+value.icon)} />
                       <Text style={globalStyle.txtBtn}>{value.name}</Text>
                     </View>
                   </TouchableOpacity>

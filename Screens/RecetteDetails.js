@@ -18,10 +18,14 @@ export default class RecetteDetails extends React.Component {
               <Card.Title>{recette.titre}</Card.Title>
               <View style={styles.imgContainer}>
                 <Image style={styles.image}
-                source={require('../App_Resources/iOS/ancre.png')} />
+                source={require('../App_Resources/iOS/'+recette.image)} />
               </View>
               <Card.Divider/>
-              <Text>{recette.description}</Text>
+              <View style={styles.txtContainer}>
+                <Text>
+                  {recette.description}
+                </Text>
+              </View>
             </Card>
           </View>
         </View>
@@ -38,9 +42,15 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
   },
+  txtContainer: {
+    alignItems: 'center',
+    width: '60%',
+    alignSelf: 'center',
+    textAlign: 'center',
+  },
   image:{
-    width:50,
-    height: 50,
+    width: 200,
+    height: 200,
     borderColor:'50%',
     marginLeft:10,
     marginTop:10,
