@@ -196,13 +196,13 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   clickAllBtn:{
-      flex:0.2,
+      flex:0.4,
       flexDirection:'column',
       justifyContent:'space-between',
       fontSize:1,
   },
   eachClick:{
-    flex:2,
+    flex:1,
     textAlign:'center',
     backgroundColor:"blue"
   }
