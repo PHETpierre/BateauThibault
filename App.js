@@ -50,9 +50,10 @@ const Stack = createStackNavigator();
 export default class App extends React.Component {
   constructor(props){
     super(props)
-    this.state= { productItems: [] }
+    this.state= { productItems: [], checkBalance: 0 }
   }
 
+  //Add the element the list 
   addProduct(name, price){
     var productItems= this.state.productItems;
     console.log(productItems,'avant')
@@ -61,8 +62,11 @@ export default class App extends React.Component {
     }
     console.log(productItems,"après")
     this.setState({productItems:productItems})
+    
     //console.log(this.state.productItems,"click")
   }
+
+  //Increse the Items
   addNumItems(name){
     var productItems=this.state.productItems;
     var List=productItems.filter(elt=>elt.name==name)[0];
@@ -77,6 +81,7 @@ export default class App extends React.Component {
     this.setState({productItems: productItems})
   }
   
+  //Decrease the items that we chose in dfferent section
   decreaseNumItems(name){
     var productItems=this.state.productItems;
     var List=productItems.filter(elt=>elt.name==name)[0];
@@ -90,6 +95,8 @@ export default class App extends React.Component {
     }
     this.setState({productItems: productItems})
   }
+
+  //Remove Element in the List of product
   removeItems(name){
     var productItems=this.state.productItems;
     var List=productItems.filter(elt=>elt.name==name)[0];
@@ -104,6 +111,12 @@ export default class App extends React.Component {
       productItems=productItems.slice(0,index).
                     concat(productItems.slice(index+1))
     }
+    this.setState({productItems:productItems})
+  }
+  getBalance(){
+    this.setState(state=>{
+      checkBalance:state.productItems
+    })
     
   }
 
@@ -119,10 +132,28 @@ export default class App extends React.Component {
         removeItems:this.removeItems.bind(this)
       }}>
       <NavigationContainer>
-        <Stack.Navigator>
+
+        {/* InitialRouteName gives what will be the first page.
+          without this argument, the first element written in "Stack.Screen" 
+          with the name of the component*/}
+        <Stack.Navigator initialRouteName="Acceuil">
+
+          {/* "Options" arg  in <Stack.Screen name=".." component={.....}/> helps to 
+          change some default properties like the title, back "*/}
           <Stack.Screen
             name = "Acceuil"
             component = {AccueilScreen}
+            options={{
+              /*  */
+              title:"My Home",
+              headerStyle: {
+                backgroundColor: '#f4511e',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
           />
           
           <Stack.Screen
@@ -160,6 +191,15 @@ export default class App extends React.Component {
           <Stack.Screen
             name = "Les produits de la semaine"
             component = {CatProduit}
+            options={{
+              headerStyle: {
+                backgroundColor: '#f4511e',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
           />
           <Stack.Screen
             name = "Produits correspondant Poissons"
